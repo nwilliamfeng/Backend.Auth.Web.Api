@@ -14,18 +14,13 @@ namespace Backend.Auth.Web
             // Web API 路由
             config.MapHttpAttributeRoutes();
 
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{action}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
-
             config.Routes.MapHttpRoute(
-    "Default",
-    "{controller}/{action}/{id}",
-    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-    new[] { "AppName.Controllers" }
-);
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+
         }
     }
 }

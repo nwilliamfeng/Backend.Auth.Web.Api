@@ -12,7 +12,6 @@ using Newtonsoft.Json.Linq;
 
 namespace Backend.Auth.Web
 {
-  
     public class AuthController : ApiController
     {
         private IAuthService _authService;

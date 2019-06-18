@@ -121,6 +121,10 @@
       <Project>{5b78615c-5fd7-4fac-aef7-f2a39ccde73a}</Project>
       <Name>Backend.Auth.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Backend.Auth.Data.MySql\Backend.Auth.Data.MySql.csproj">
+      <Project>{b115f249-4251-4ba2-b962-3c3302982058}</Project>
+      <Name>Backend.Auth.Data.MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Backend.Auth.Data.Redis\Backend.Auth.Data.Redis.csproj">
       <Project>{986449be-8573-48aa-a6b5-90fd5e09e78e}</Project>
       <Name>Backend.Auth.Data.Redis</Name>
