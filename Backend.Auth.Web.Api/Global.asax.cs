@@ -11,11 +11,13 @@ namespace Backend.Auth.Web
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+
+
         protected void Application_Start()
         {
             RedisCache.ConfigName = "RedisServer";
 
-            AutofacWebapiConfig .Initialize(GlobalConfiguration.Configuration, "Backend.Auth", new string[] { "Repository", "Cache", "Service" });
+            AutofacWebapiConfig .Initialize(this,GlobalConfiguration.Configuration, "Backend.Auth", new string[] { "Repository", "Cache", "Service" });
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
  

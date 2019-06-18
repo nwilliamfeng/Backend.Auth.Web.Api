@@ -54,6 +54,7 @@
       <HintPath>..\packages\Microcomm.Core.1.0.0.3\lib\net462\Microcomm.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microcomm.WebApi, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microcomm.WebApi.1.0.0.4\lib\net462\Microcomm.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
