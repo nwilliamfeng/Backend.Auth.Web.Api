@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Auth.Service.WebApi
+namespace Backend.Auth.Web
 {
     public static class WebApiConfig
     {
@@ -14,11 +14,18 @@ namespace Auth.Service.WebApi
             // Web API 路由
             config.MapHttpAttributeRoutes();
 
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{action}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
+
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+    "Default",
+    "{controller}/{action}/{id}",
+    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+    new[] { "AppName.Controllers" }
+);
         }
     }
 }

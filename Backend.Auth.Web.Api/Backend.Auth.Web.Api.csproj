@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Auth.Service.Web.Api</RootNamespace>
-    <AssemblyName>Auth.Service.Web.Api</AssemblyName>
+    <RootNamespace>Backend.Auth.Web.Api</RootNamespace>
+    <AssemblyName>Backend.Auth.Web.Api</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -50,11 +50,11 @@
     <Reference Include="Autofac.Integration.WebApi, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.4.2.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="Microcomm.Core, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microcomm.Core.1.0.0.2\lib\net462\Microcomm.Core.dll</HintPath>
+    <Reference Include="Microcomm.Core, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microcomm.Core.1.0.0.3\lib\net462\Microcomm.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microcomm.WebApi, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microcomm.WebApi.1.0.0.3\lib\net462\Microcomm.WebApi.dll</HintPath>
+    <Reference Include="Microcomm.WebApi, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microcomm.WebApi.1.0.0.4\lib\net462\Microcomm.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -116,6 +116,20 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend.Auth.Core\Backend.Auth.Core.csproj">
+      <Project>{5b78615c-5fd7-4fac-aef7-f2a39ccde73a}</Project>
+      <Name>Backend.Auth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Backend.Auth.Data.Redis\Backend.Auth.Data.Redis.csproj">
+      <Project>{986449be-8573-48aa-a6b5-90fd5e09e78e}</Project>
+      <Name>Backend.Auth.Data.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Backend.Auth.Service\Backend.Auth.Service.csproj">
+      <Project>{326c627c-1cef-412b-af2b-ed04f9be1f51}</Project>
+      <Name>Backend.Auth.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -134,7 +148,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62463</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:6700/</IISUrl>
+          <IISUrl>http://localhost:6800/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

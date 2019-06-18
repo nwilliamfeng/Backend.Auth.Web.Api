@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using Backend.Auth.Service;
+using Microcomm;
 using Microcomm.Web.Http;
 using Microcomm.Web.Http.Filters;
 using Newtonsoft.Json.Linq;
 
-namespace Auth.Service.Web.Http
+namespace Backend.Auth.Web
 {
   
     public class AuthController : ApiController

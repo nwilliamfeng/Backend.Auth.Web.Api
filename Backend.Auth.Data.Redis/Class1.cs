@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Auth.Service
+namespace Backend.Auth.Data.Redis
 {
     public class Class1
     {

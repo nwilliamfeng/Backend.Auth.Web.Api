@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Web.Api", "Bac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Service", "Backend.Auth.Service\Backend.Auth.Service.csproj", "{326C627C-1CEF-412B-AF2B-ED04F9BE1F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Data.MySql", "Backend.Auth.Data.MySql\Backend.Auth.Data.MySql.csproj", "{B115F249-4251-4BA2-B962-3C3302982058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Data.Redis", "Backend.Auth.Data.Redis\Backend.Auth.Data.Redis.csproj", "{986449BE-8573-48AA-A6B5-90FD5E09E78E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{326C627C-1CEF-412B-AF2B-ED04F9BE1F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{326C627C-1CEF-412B-AF2B-ED04F9BE1F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{326C627C-1CEF-412B-AF2B-ED04F9BE1F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B115F249-4251-4BA2-B962-3C3302982058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B115F249-4251-4BA2-B962-3C3302982058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B115F249-4251-4BA2-B962-3C3302982058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B115F249-4251-4BA2-B962-3C3302982058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

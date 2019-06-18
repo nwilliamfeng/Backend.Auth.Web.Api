@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Backend.Auth.Service
 {
-    public interface IAuthService:Microcomm.Web.Http.ITokenIdentify
+    public interface IAuthService: Microcomm.Security.ITokenIdentify
     {
         Task<JsonResultData<LoginResult>> Login(string userId ,string password);
 

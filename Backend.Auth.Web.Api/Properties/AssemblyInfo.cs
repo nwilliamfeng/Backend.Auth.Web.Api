@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Auth.Service.WebApi")]
-[assembly: AssemblyDescription("Auth.Service.WebApi")]
+[assembly: AssemblyTitle("Backend.Auth.Web.Api")]
+[assembly: AssemblyDescription("Backend.Auth.Web.Api")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("nwilliamfeng")]
-[assembly: AssemblyProduct("Auth.Service.WebApi")]
+[assembly: AssemblyProduct("Backend.Auth.Web.Api")]
 [assembly: AssemblyCopyright("版权所有(C)  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
