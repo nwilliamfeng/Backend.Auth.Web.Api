@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Data.MySql", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Auth.Data.Redis", "Backend.Auth.Data.Redis\Backend.Auth.Data.Redis.csproj", "{986449BE-8573-48AA-A6B5-90FD5E09E78E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microcomm.WebApi", "..\Microcomm.WebApi\Microcomm.WebApi\Microcomm.WebApi.csproj", "{ABB62492-7D53-4A5B-BCE1-7B40A01EC6DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{986449BE-8573-48AA-A6B5-90FD5E09E78E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB62492-7D53-4A5B-BCE1-7B40A01EC6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB62492-7D53-4A5B-BCE1-7B40A01EC6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB62492-7D53-4A5B-BCE1-7B40A01EC6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB62492-7D53-4A5B-BCE1-7B40A01EC6DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

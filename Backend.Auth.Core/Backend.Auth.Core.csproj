@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Data\ILoginInfoRepository.cs" />
     <Compile Include="Data\IUserRepository.cs" />
+    <Compile Include="LoginParam.cs" />
     <Compile Include="Service\IAuthService.cs" />
     <Compile Include="LoginInfo.cs" />
     <Compile Include="LoginResult.cs" />

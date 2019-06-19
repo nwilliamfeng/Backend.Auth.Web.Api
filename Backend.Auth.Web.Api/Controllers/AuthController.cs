@@ -12,6 +12,8 @@ using Newtonsoft.Json.Linq;
 
 namespace Backend.Auth.Web
 {
+    
+ 
     public class AuthController : ApiController
     {
         private IAuthService _authService;
@@ -21,26 +23,38 @@ namespace Backend.Auth.Web
             this._authService = authService;
         }
 
-     
-       
-     
-        [HttpPost]
-        [JObjectParamValidate(Params ="userId,password")]
-        public async Task<IHttpActionResult> Login([FromBody]JObject param )
+        //[HttpPost]
+        //[JObjectParamValidate(Params ="userId,password")]
+        //[CacheOutputWithPost(ServerTimeSpan =15)]
+        //public async Task<IHttpActionResult> Login([FromBody]JObject param )
+        //{
+        //    try
+        //    {
+        //        var result = await this._authService.Login(param["userId"].Value<string>()  ,param["password"].Value<string>());
+        //        return this.JsonResult(result); 
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return this.JsonResult(ex.ToJson());
+        //    }         
+        //}
+
+        [HttpPost]    
+        [CacheOutputWithPost(ServerTimeSpan = 10)]
+        public async Task<IHttpActionResult> Login([FromBody]LoginParam param)
         {
             try
             {
-                var result = await this._authService.Login(param["userId"].Value<string>()  ,param["password"].Value<string>());
-                return this.JsonResult(result); 
+                var result = await this._authService.Login(param.UserId, param.Password);
+                return this.JsonResult(result);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return this.JsonResult(ex.ToJson());
             }
-           
         }
 
-       
+
         [HttpPost]
         [Authentication]
         public async Task<IHttpActionResult> Logout([FromBody]JObject param)
