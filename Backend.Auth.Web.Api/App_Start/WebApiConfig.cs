@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microcomm.Web.Http.Filters;
+ 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -20,7 +22,8 @@ namespace Backend.Auth.Web
                 defaults: new { id = RouteParameter.Optional }
             );
 
-
+            config.Filters.Add(new GlobalExceptionFilter());
+            config.Filters.Add(new GlobalLogFilter());
         }
     }
 }

@@ -50,12 +50,6 @@
     <Reference Include="Autofac.Integration.WebApi, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.4.2.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="Microcomm.Core, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microcomm.Core.1.0.0.3\lib\net462\Microcomm.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microcomm.WebApi, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microcomm.WebApi.1.0.0.6\lib\net462\Microcomm.WebApi.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -98,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -111,6 +108,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Microcomm.Core\Microcomm.Core\Microcomm.Core.csproj">
+      <Project>{d6c9ecc1-24cb-4b77-88b9-b706e63963b0}</Project>
+      <Name>Microcomm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Microcomm.WebApi\Microcomm.WebApi\Microcomm.WebApi.csproj">
+      <Project>{abb62492-7d53-4a5b-bce1-7b40a01ec6dd}</Project>
+      <Name>Microcomm.WebApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Backend.Auth.Core\Backend.Auth.Core.csproj">
       <Project>{5b78615c-5fd7-4fac-aef7-f2a39ccde73a}</Project>
       <Name>Backend.Auth.Core</Name>
