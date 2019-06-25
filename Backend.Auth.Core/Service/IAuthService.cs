@@ -11,7 +11,7 @@ namespace Backend.Auth.Service
 {
     public interface IAuthService: Microcomm.Security.ITokenIdentify
     {
-        Task<JsonResultData<LoginResult>> Login(string userId ,string password);
+        Task<JsonResultData<LoginResult>> Login(string userId ,string password, long expirePeriodSeconds);
 
         Task<JsonResultData<bool>> Logout(string accessToken);
 

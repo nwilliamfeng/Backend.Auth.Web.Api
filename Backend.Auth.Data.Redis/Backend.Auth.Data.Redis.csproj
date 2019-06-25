@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microcomm.Core">
-      <HintPath>..\packages\Microcomm.Core.1.0.0.3\lib\net462\Microcomm.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -54,6 +51,10 @@
     <Compile Include="UserCache.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Microcomm.Core\Microcomm.Core\Microcomm.Core.csproj">
+      <Project>{d6c9ecc1-24cb-4b77-88b9-b706e63963b0}</Project>
+      <Name>Microcomm.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Backend.Auth.Core\Backend.Auth.Core.csproj">
       <Project>{5b78615c-5fd7-4fac-aef7-f2a39ccde73a}</Project>
       <Name>Backend.Auth.Core</Name>

@@ -32,21 +32,21 @@ namespace Backend.Auth.Service
                 var jsr = await this.DecodeAndValidateFromToken(accessToken);
 
                 if (!jsr.Item2)
-                    return false.ToJson("非法的令牌，注销失败").SetStatusCode(StatusCodes.TOKEN_INVALID);
+                    return false.ToJsonResultData().SetFail("非法的令牌，注销失败").SetStatusCode(StatusCodes.TOKEN_INVALID);
                 await _loginInfoRepository.Update(jsr.Item1, DateTime.MinValue);
-                return true.ToJson();
+                return true.ToJsonResultData();
             }
             catch (TokenExpiredException)
             {
-                return false.ToJson("token已过期").SetStatusCode(StatusCodes.TOKEN_EXPIRE);
+                return false.ToJsonResultData().SetFail("token已过期").SetStatusCode(StatusCodes.TOKEN_EXPIRE);
             }
             catch (SignatureVerificationException)
             {
-                return false.ToJson("token无效的签名").SetStatusCode(StatusCodes.TOKEN_INVALID);
+                return false.ToJsonResultData().SetFail("token无效的签名").SetStatusCode(StatusCodes.TOKEN_INVALID);
             }
             catch (Exception)
             {
-                return false.ToJson("非法的token").SetStatusCode(StatusCodes.TOKEN_INVALID);
+                return false.ToJsonResultData().SetFail("非法的token").SetStatusCode(StatusCodes.TOKEN_INVALID);
             }
 
 
@@ -55,8 +55,9 @@ namespace Backend.Auth.Service
         
 
  
-        public async Task<JsonResultData<LoginResult>> Login(string userId, string password)
+        public async Task<JsonResultData<LoginResult>> Login(string userId, string password,long expirePeriodSeconds)
         {
+          
             var jur = await this._userService.Load(userId,password);
             var user = jur.Data;
             if (user == null)
@@ -66,8 +67,7 @@ namespace Backend.Auth.Service
 
             var accessToken = new JwtBuilder().WithAlgorithm(new HMACSHA256Algorithm())
                 .WithSecret(SECRET)
-                .AddClaim("exp", DateTimeOffset.UtcNow.AddHours(12)
-                .ToUnixTimeSeconds())
+                .AddClaim("exp", expirePeriodSeconds)
                 .AddClaim("userId", userId)
                 .AddClaim("timestamp", time.ToUnixTime())
                 .Build();
@@ -95,20 +95,20 @@ namespace Backend.Auth.Service
                 var info =await this.DecodeAndValidateFromToken(accessToken);
                  
                 if (!info.Item2 )
-                    return false.ToJson("无效的token").SetStatusCode(StatusCodes.TOKEN_INVALID);           
-                return true.ToJson();
+                    return false.ToJsonResultData().SetFail("无效的token").SetStatusCode(StatusCodes.TOKEN_INVALID);           
+                return true.ToJsonResultData();
             }
             catch (TokenExpiredException)
             {
-                return false.ToJson("token已过期").SetStatusCode(StatusCodes.TOKEN_EXPIRE)  ;
+                return false.ToJsonResultData().SetFail("token已过期").SetStatusCode(StatusCodes.TOKEN_EXPIRE)  ;
             }
             catch (SignatureVerificationException)
             {
-                return false.ToJson("token无效的签名").SetStatusCode(StatusCodes.TOKEN_INVALID);
+                return false.ToJsonResultData().SetFail("token无效的签名").SetStatusCode(StatusCodes.TOKEN_INVALID);
             }
             catch(Exception)
             {
-                return false.ToJson("非法的token").SetStatusCode(StatusCodes.TOKEN_INVALID);
+                return false.ToJsonResultData().SetFail("非法的token").SetStatusCode(StatusCodes.TOKEN_INVALID);
             }
         }
     }

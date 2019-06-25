@@ -45,7 +45,8 @@ namespace Backend.Auth.Web
         {
             try
             {
-                var result = await this._authService.Login(param.UserId, param.Password);
+                var period = DateTimeOffset.UtcNow.AddHours(24 * 7).ToUnixTimeSeconds();
+                var result = await this._authService.Login(param.UserId, param.Password,period);
                 return this.JsonResult(result);
             }
             catch (Exception ex)
